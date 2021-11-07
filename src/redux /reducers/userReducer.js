@@ -1,15 +1,14 @@
-import { FETCH_USERS } from "../actions/userAction";
+import { SUCCESS_FETCH_USERS } from "../actions/userAction";
 
 const initialState = {
   posts: null,
 };
 const usersReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_USERS: {
-      const posts = action.payload.data;
+    case SUCCESS_FETCH_USERS: {
       return {
         ...state,
-        posts,
+        posts: action.payload.data,
       };
     }
     default: {
