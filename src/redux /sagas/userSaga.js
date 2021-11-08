@@ -1,10 +1,10 @@
 import { takeEvery, call, put } from "redux-saga/effects";
-import { getPosts } from "../API/posts";
+import { getPosts } from "../../API/posts";
 import {
   ERROR_FETCH_USERS,
   FETCH_USERS,
   SUCCESS_FETCH_USERS,
-} from "./actions/userAction";
+} from "../actions/userAction";
 
 export function* fetchUsersRequets(userId) {
   try {
@@ -21,11 +21,7 @@ export function* fetchUsersRequets(userId) {
   }
 }
 
-export function* someSaga(){
-  console.log('hello');
-}
 
 export function* sagasPosts() {
   yield takeEvery(FETCH_USERS, fetchUsersRequets);
-  yield takeEvery(FETCH_USERS, someSaga)
 }

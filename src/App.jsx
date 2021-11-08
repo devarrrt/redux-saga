@@ -13,7 +13,17 @@ const App = () => {
     dispatch({
       type: FETCH_USERS
     })
-  }, [])
+    dispatch({
+      type: FETCH_USERS
+    })
+    dispatch({
+      type: FETCH_USERS
+    })
+    dispatch({
+      type: FETCH_USERS
+    })
+    
+  }, []) 
 
   return (
     <div>
