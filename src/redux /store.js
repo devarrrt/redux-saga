@@ -15,7 +15,7 @@ const store = createStore(
   rootReducer,
   composeEnhancers(applyMiddleware(sagaMiddleware))
 );
-// sagaMiddleware.run(rootSaga);
-sagaMiddleware.run(sagasPostsChannel);
+sagaMiddleware.run(rootSaga);
+// sagaMiddleware.run(sagasPostsChannel);
 
 export default store;

@@ -30,7 +30,7 @@ export function* sagasPostsChannel() {
     yield call(fetchUsersRequets, action);
   }
 }
-
+ 
 // export function* sagasPosts() {
 //   yield takeEvery(FETCH_USERS, fetchUsersRequets);
 // }

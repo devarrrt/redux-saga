@@ -5,15 +5,14 @@ const initialState = {
 };
 const usersReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SUCCESS_FETCH_USERS: {
+    case SUCCESS_FETCH_USERS: 
       return {
         ...state,
         posts: action.payload.data,
       };
-    }
-    default: {
+    
+    default: 
       return state;
-    }
   }
 };
 
