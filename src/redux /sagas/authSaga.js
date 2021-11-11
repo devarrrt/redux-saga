@@ -13,7 +13,7 @@ function* authorize(username, password) {
     const token = yield call(login, username, password); //blocked call
     yield put({
       // as dispatch
-      type: LOGIN_SUCCESS,
+      type: LOGIN_SUCCESS,  
       payload: { token },
     });
     yield call(saveToken, token);
