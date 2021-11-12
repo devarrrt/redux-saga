@@ -1,6 +1,6 @@
-import axios from "axios"
 
 export const getPosts = (userId) => {
-    const res = axios.get("https://jsonplaceholder.typicode.com/posts")
-    return res
-}   
+  return fetch(
+    `https://jsonplaceholder.typicode.com/users/${userId}/posts`
+  ).then((response) => response.json());
+};

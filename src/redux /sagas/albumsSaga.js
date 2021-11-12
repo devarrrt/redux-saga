@@ -20,17 +20,17 @@ function* fetchPosts(userId) {
   })
 }
 
-// export function* fetchUserData(userId) {
-//   yield fork(fetchAlbums, userId);
-//   yield fork(fetchPosts, userId);
-//   console.log('done');
-// }
-
 export function* fetchUserData(userId) {
-  yield spawn(fetchAlbums, userId);
-  yield spawn(fetchPosts, userId);
-  console.log("done");
+  yield fork(fetchAlbums, userId);
+  yield fork(fetchPosts, userId);
+  console.log('done');
 }
+
+// export function* fetchUserData(userId) {
+//   yield spawn(fetchAlbums, userId);
+//   yield spawn(fetchPosts, userId);
+//   console.log("done");
+// }
 
 export function* albumsSaga() {
   const userId = 1;

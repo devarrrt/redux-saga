@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { LOGIN_REQUEST, LOGOUT } from './redux /actions/authAction'
-import { FETCH_USERS } from './redux /actions/userAction'
+import { FETCH_USERS, FETCH_USER_POSTS } from './redux /actions/userAction'
 
 const App = () => {
   const dispatch = useDispatch()
@@ -28,9 +28,24 @@ const App = () => {
   const handleLogout = () => {
     dispatch({ type: LOGOUT })
   }
+  const getPosts = () => {
+    dispatch({ 
+      type: FETCH_USER_POSTS, payload: {userId: 1}
+    })
+    dispatch({
+      type: FETCH_USER_POSTS, payload: { userId: 2 }
+    })
+       dispatch({ 
+      type: FETCH_USER_POSTS, payload: {userId: 3}
+    })
+    dispatch({
+      type: FETCH_USER_POSTS, payload: { userId:4 }
+    })
+  }
 
   return (
     <div>
+      <button onClick={ getPosts } > Get posts </button>
       <button
         onClick={handleLogin}
         style={{ padding: 15, cursor: 'pointer' }}> Login</button>
